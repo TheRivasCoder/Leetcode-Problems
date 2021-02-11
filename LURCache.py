@@ -1,21 +1,22 @@
+# Requires OrderedDict to keep track of most recently accessed Key Value pair
 from collections import OrderedDict
 
 class LRUCache:
 
-    def __init__(self, capacity: int):
+    def __init__(self, capacity: int): # constructer requires capacity to limit the number of items in Cache
         self.capacity = capacity
         self.dictionary = OrderedDict()
         
-    def get(self, key: int) -> int:
+    def get(self, key: int) -> int: # Get function return value for specific key and moves item to end of dictionary as most recently accessed
         if key in self.dictionary:
             self.dictionary.move_to_end(key)
             return self.dictionary[key]
         return -1
 
-    def put(self, key: int, value: int) -> None:
+    def put(self, key: int, value: int) -> None: # Put function adds item to dictionary and removes least recent item from dictionary if number of items is over capacity
         if key in self.dictionary:
-            self.dictionary.move_to_end(key)
-        self.dictionary[key] = value
+            self.dictionary.move_to_end(key) # moves item to end of dictionary if it already exists in dictionary
+        self.dictionary[key] = value 
         if self.capacity < len(self.dictionary):
             self.dictionary.popitem(last = False)
 
