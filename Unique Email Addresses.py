@@ -1,4 +1,9 @@
-
+myEmails = ["test.email+alex@leetcode.com",
+"test.e.mail+bob.cathy@leetcode.com",
+"testemail+david@lee.tcode.com",
+"t.est.email+alex@leetcode.com",
+"test.e.mail+bob@leet.code.com",
+"test+emaildavid@leetcodecom"]
 
 class Solution:
     def numUniqueEmails(emails):
@@ -13,3 +18,6 @@ class Solution:
             new_email_list.add(new_email)
             
         return len(new_email_list)
+
+
+print(Solution.numUniqueEmails(myEmails))
