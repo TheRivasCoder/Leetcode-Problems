@@ -1,17 +1,17 @@
-t = "abba"
+test = "abba"
 
 def lengthOfLongestSubstring(s: str) -> int:
-    dic = {}
+    dic = {} #Dictionary to check if we have encountered same letter before
     longest = 0
     start = 0
-    for i in range(len(s)):
-        if s[i] not in dic:
-            dic[s[i]] = i
+    for index in range(len(s)):
+        if s[index] not in dic: #Check if current letter is NOT in dictionary
+            dic[s[index]] = index #Add letter and it's index to dictionary
         else:
-            start = dic[s[i]] +1
-            dic[s[i]] = i
-        longest = max(longest, i-start+1)
+            start = max(start, dic[s[index]] +1) #If letter in dictionary, move start to index after repeated letter
+            dic[s[index]] = index #Update index of repeated letter
+        longest = max(longest, index-start+1) #Longest string is equal to the largest between previous longest string or current string length
     return longest
 
 
-print(lengthOfLongestSubstring(t))
+print(lengthOfLongestSubstring(test))
