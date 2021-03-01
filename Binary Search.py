@@ -1,5 +1,5 @@
 numbers = [-1,0,3,5,9,12]
-target = 13
+target = 5
 def search(nums, target):
     """
     :type nums: List[int]
