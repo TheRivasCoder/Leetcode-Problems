@@ -16,3 +16,4 @@ def maxProfit(prices):
         max_profit = max(max_profit, current)
     return max_profit
 
+print(maxProfit(Price_list))
