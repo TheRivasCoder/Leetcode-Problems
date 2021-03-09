@@ -1,3 +1,6 @@
+n = 4
+edges = [[0,1],[2,3],[1,2]]
+
 def countComponents(n, edges):
     parents = [number for number in range(n)]
     
@@ -19,4 +22,5 @@ def countComponents(n, edges):
     for parent in parents:
         roots.add(find(parent))
     return len(roots)
-    
+
+print(countComponents(n,edges))
