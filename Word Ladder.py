@@ -13,14 +13,14 @@ def ladderLength(beginWord, endWord, wordList):
     word_set = set(wordList) #create word set to hold found words in wordList
     while Q:
         word, length = Q.popleft()
-        if word == endWord:
+        if word == endWord: #check if we are at the end word to return the length of the word list
             return length
         for i in range(len(word)):
             for char in 'qwertyuiopasdfghjklzxcvbnm':
-                check_word = word[:i]+char+word[i+1:]
+                check_word = word[:i]+char+word[i+1:] 
                 if check_word in word_set:
                     word_set.remove(check_word)
-                    Q.append((check_word, length+1))
+                    Q.append((check_word, length+1)) 
     return 0
 
 print(ladderLength(start, end, test_list))
