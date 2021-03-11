@@ -9,8 +9,8 @@ def ladderLength(beginWord, endWord, wordList):
     :type wordList: List[str]
     :rtype: int
     """
-    Q = deque([(beginWord, 1)])
-    word_set = set(wordList)
+    Q = deque([(beginWord, 1)]) #create que with starting word
+    word_set = set(wordList) #create word set to hold found words in wordList
     while Q:
         word, length = Q.popleft()
         if word == endWord:
