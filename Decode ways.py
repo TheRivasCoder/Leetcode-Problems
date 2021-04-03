@@ -1,4 +1,7 @@
 
+'''
+This solution works on the first test case but needs memoization to submit successfully. 
+'''
 
 
 class Solution:
