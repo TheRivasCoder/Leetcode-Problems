@@ -15,9 +15,4 @@ def isHappy(n):
 
 
 
-print(isHappy(2))
-print(isHappy(3))
-print(isHappy(4))
-print(isHappy(5))
-print(isHappy(6))
-print(isHappy(7))
+# test
